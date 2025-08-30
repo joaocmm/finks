@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Orçamento Pessoal</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Orçamento Pessoal</h1>
+
+    <section id="auth-section">
+      <div class="card">
+        <h2>Registrar</h2>
+        <form id="register-form">
+          <input type="text" id="reg-name" placeholder="Nome" required />
+          <input type="email" id="reg-email" placeholder="E-mail" required />
+          <input type="password" id="reg-password" placeholder="Senha (min 6)" required />
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+      <div class="card">
+        <h2>Login</h2>
+        <form id="login-form">
+          <input type="email" id="log-email" placeholder="E-mail" required />
+          <input type="password" id="log-password" placeholder="Senha" required />
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="app-section" class="hidden">
+      <div class="toolbar">
+        <button id="logout-btn">Sair</button>
+      </div>
+
+      <div class="card">
+        <h2>Contas</h2>
+        <div class="row">
+          <select id="accounts"></select>
+          <input id="new-account-name" placeholder="Nova conta..." />
+          <button id="create-account-btn">Criar Conta</button>
+        </div>
+        <div class="row">
+          <input id="invite-email" placeholder="E-mail para convidar" />
+          <button id="invite-btn">Adicionar membro</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Novo Lançamento</h2>
+        <div class="row">
+          <select id="entry-type">
+            <option value="expense">Despesa</option>
+            <option value="income">Receita</option>
+            <option value="investment">Investimento</option>
+          </select>
+          <input id="entry-title" placeholder="Título" />
+          <input id="entry-amount" type="number" step="0.01" placeholder="Valor" />
+          <input id="entry-category" placeholder="Categoria (para despesas)" />
+          <input id="entry-date" type="date" />
+          <button id="add-entry-btn">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Filtros</h2>
+        <div class="row">
+          <label>De: <input id="filter-from" type="date" /></label>
+          <label>Até: <input id="filter-to" type="date" /></label>
+          <select id="filter-type">
+            <option value="">Tipo (todos)</option>
+            <option value="expense">Despesa</option>
+            <option value="income">Receita</option>
+            <option value="investment">Investimento</option>
+          </select>
+          <input id="filter-category" placeholder="Categoria" />
+          <button id="load-entries-btn">Carregar</button>
+          <button id="daily-report-btn">Diário</button>
+          <button id="weekly-report-btn">Semanal</button>
+          <button id="monthly-report-btn">Mensal</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Resumo</h2>
+        <pre id="summary"></pre>
+      </div>
+
+      <div class="card">
+        <h2>Lançamentos</h2>
+        <table id="entries-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Título</th>
+              <th>Tipo</th>
+              <th>Categoria</th>
+              <th>Valor</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

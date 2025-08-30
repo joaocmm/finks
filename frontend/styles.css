@@ -1,0 +1,10 @@
+*{box-sizing:border-box}body{font-family:system-ui,Arial,Helvetica,sans-serif;background:#f6f6f6;margin:0;padding:20px}
+.container{max-width:1100px;margin:0 auto}
+.hidden{display:none}
+.card{background:#fff;padding:16px;margin:12px 0;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+input,select,button{padding:10px;border:1px solid #ddd;border-radius:8px}
+button{cursor:pointer}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+pre{white-space:pre-wrap}
